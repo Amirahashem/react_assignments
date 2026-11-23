@@ -1,0 +1,32 @@
+function ProductCard(props) {
+  return (
+    <article>
+      <h2>{props.productName}</h2>
+      <p>Price: {props.price}</p>
+      <p>Total: {props.price + 20}</p>
+    </article>
+  );
+}
+
+export default function App() {
+  return <ProductCard productName="Keyboard" price={100} />;
+}
+
+### Errors & Fixes
+
+1. Prop Name Mismatch
+   - name -> productName
+   - Reason: The prop name passed to the component must match the name used inside it.
+
+2. Wrong Data Type
+   - price="100" -> price={100}
+   - Reason: Price must be a Number, not a String, to perform mathematical operations.
+
+3. Missing JSX Curly Braces
+   - Price: props.price -> Price: {props.price}
+   - Reason: Curly braces {} are required to display JavaScript expressions inside JSX.
+
+4. Total Calculation
+   - props.price + 20
+   - No change needed after converting price to a Number.
+   - Reason: Ensures numeric addition instead of string concatenation.
